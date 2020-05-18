@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { flyInOut } from '../animations/app.animation';
 import { Feedback, ContactType } from '../shared/feedback';
+
+import { FeedbackService } from '../services/feedback.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -18,7 +20,9 @@ export class ContactComponent implements OnInit {
   @ViewChild('fform') feedbackFormDirective;
   feedbackForm: FormGroup;
   feedback: Feedback;
+  formcopy: Feedback;
   contactType = ContactType;
+  spinnerVisibility: boolean = false;
   formErrors = {
     'firstname': '',
     'lastname': '',
@@ -46,7 +50,7 @@ export class ContactComponent implements OnInit {
       'email':         'Email not in valid format.'
     },
   };
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private feedbackService: FeedbackService) {
     this.createForm();
   }
   createForm() {
@@ -84,7 +88,21 @@ export class ContactComponent implements OnInit {
     }
   }
   onSubmit() {
+    this.spinnerVisibility = true;
     this.feedback = this.feedbackForm.value;
+    this.formcopy = this.feedbackForm.value;
+  
+   // this.dishcopy.comments.push(this.comment);
+    this.feedbackService.submitFeedback(this.formcopy)
+    .subscribe(feedback => 
+      { setTimeout(() => 
+        {
+          this.feedback = feedback; this.spinnerVisibility = false; console.log(this.feedback); 
+          setTimeout(() => this.feedback = null, 5000);
+        }
+        , 2000);
+      }
+    );
     console.log(this.feedback);
     this.feedbackForm.reset({
       firstname: '',
