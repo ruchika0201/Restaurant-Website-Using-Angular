@@ -4,24 +4,24 @@
 
   <div fxFlex>
     <div>
-        <h3>Contact Us</h3>
+      <h3 style="font-family: myFont;text-align: center;font-size:35px;">Contact Us</h3>
         <hr>
     </div>
   </div>
 
   <div fxFlex>
-    <h3>Location Information</h3> 
+    <h3 style="font-family: myFont;">Location Information</h3> 
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="50" fxFlexOffset="20px">
         <h4>Our Address</h4>
         <address>
-          121, Clear Water Bay Road<br>
-          Clear Water Bay, Kowloon<br>
-          HONG KONG<br>
-          <i class="fa fa-phone"></i>: +852 1234 5678<br>
-          <i class="fa fa-fax"></i>: +852 8765 4321<br>
+          123, Clear Water Bay Road<br>
+          Clear Water Bay, Nagpur<br>
+          India<br>
+          <i class="fa fa-phone"></i>: +91 9874563215<br>
+          <i class="fa fa-fax"></i>: +91 9874563215<br>
           <i class="fa fa-envelope"></i>: 
-                <a href="mailto:confusion@food.net">confusion@food.net</a>
+                <a href="mailto:ruchikapande99@gmail.com">ruchikapande99@gmail.com</a>
         </address>
         <p></p>
         <div>
@@ -30,14 +30,20 @@
           <a mat-raised-button href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
         </div>
         </div>
-      <div fxFlex="40">
-        <h4>Map of our Location</h4>
+      <div fxFlex="40" style="margin-top: -65px;">
+        <h3 style="font-family: myFont;">Map of our Location</h3>
+        <mat-card>
+          
+          <img mat-card-image src="https://maps.zomato.com/php/staticmap?center=21.1239010734,79.0449923649&size=600x400&maptype=zomato&markers=21.1239010734,79.0449923649,pin_res32&sensor=false&scale=2&zoom=14&language=en" >
+          
+        
+        </mat-card>
       </div>
     </div>
   </div>
   <div fxFlex fxFlexOffset="20px" class="form-size">
-    <h3>Send us your Feedback</h3>
-    <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
+    <h3 style="font-family: myFont;">Send us your Feedback</h3>
+   <!-- <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>-->
 
     <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()"[hidden]="feedback || spinnerVisibility" [@expand]>
       <p>
@@ -45,6 +51,7 @@
               <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
               <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
             </mat-form-field>
+            <br>
             <mat-form-field class="half-width">
               <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
               <mat-error *ngIf="formErrors.lastname">{{formErrors.lastname}}</mat-error>
@@ -55,6 +62,7 @@
               <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel" pattern="[0-9]*" required>
               <mat-error *ngIf="formErrors.telnum">{{formErrors.telnum}}</mat-error>
             </mat-form-field>
+            <br>
             <mat-form-field class="half-width">
               <input matInput formControlName="email" placeholder="Email" type="email" email required>
               <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
@@ -74,7 +82,7 @@
         </table>
       <p>
         <mat-form-field class="full-width">
-          <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
+          <textarea matInput formControlName="message" placeholder="Your Feedback" rows=7></textarea>
         </mat-form-field>
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>

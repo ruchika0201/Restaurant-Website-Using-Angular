@@ -19,6 +19,10 @@ $divider-color:        #BDBDBD;
     margin: 0px auto;
     padding: $pad-up-down $pad-left-right;
 }
+.mat-toolbar {
+  background: teal;
+  color: #fff
+}
 body { 
   padding: 0; 
   margin: 0; 

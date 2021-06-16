@@ -1,0 +1,22 @@
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(200px,30px);
+    background-image:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    color:floralwhite;
+    min-height: 150px;
+    background-repeat: no-repeat;
+  background-size: 1400px 800px;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(lobster.otf);
+  }
+  mat-card{
+    width: fit-content;
+}

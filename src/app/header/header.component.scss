@@ -9,11 +9,18 @@ $background-moredark: #4527A0;
 }
 
 .jumbotron {
-    @include zero-margin(70px,30px);
-    background: $background-light ;
+    @include zero-margin(200px,30px);
+    
+    background-image:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&h=750&w=1260");
     color:floralwhite;
     min-height: 150px;
+    background-repeat: no-repeat;
+  background-size: 1500px 600px;
 }
 .active {
     background: $background-moredark;
 }
+.mat-toolbar {
+    background: rgb(21, 27, 27);
+    color: #fff
+ }

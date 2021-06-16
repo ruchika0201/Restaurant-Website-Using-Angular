@@ -4,7 +4,7 @@
 
      <div fxFlex>
       <div>
-        <h3>Menu</h3>
+        <h3 style="font-family: myFont;text-align: center;font-size:35px;">Menu of the day</h3>
         <hr>
       </div>
     </div>
@@ -12,9 +12,9 @@
     <div fxFlex *ngIf = "dishes"  [@expand]>
       <mat-grid-list cols="2" rowHeight="200px">
         <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]" appHighlight>
-          <img height="200px" src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
+          <img height="350px" width="400px" src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
           <mat-grid-tile-footer>
-            <h1>{{dish.name | uppercase}}</h1>
+            <h1 style="color:black; font:Times New Roman; text-align: center;font-size:18px; font-weight:bold;"><i>{{dish.name | uppercase}}</i></h1>
           </mat-grid-tile-footer>
         </mat-grid-tile>
       </mat-grid-list>

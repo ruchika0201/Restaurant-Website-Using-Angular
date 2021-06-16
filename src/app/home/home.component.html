@@ -1,3 +1,23 @@
+<div class="container jumbotron"
+    fxLayout="row"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" 
+    fxLayoutAlign.gt-sm="center center" 
+    fxLayoutGap="10px">
+
+  <div fxFlex fxFlex.gt-sm="50%">
+    <h1 style="color:white; font:Times New Roman; font-size:55px; font-weight:normal; margin-left:10px; margin-top:-90px; font-family:myFont">Just for Foodies</h1>
+    <p style="color:rgb(197, 194, 194);margin-left:10px;font-size:25px;"><i>We take inspiration from the world's best cuisines, and create a unique fusion experience. Our lipsmacking creations
+      will tickle your culinary senses!</i></p>
+  </div>
+  <div fxFlex fxFlex.gt-sm="20%">
+   <!--<img src="/assets/images/logo.png" alt="Logo">--> 
+  </div>
+  <div fxFlex></div>
+</div>
+
 <div class="container"
      fxLayout="row"
      fxLayout.sm="column"
@@ -9,12 +29,12 @@
   <mat-card-header>
     <div mat-card-avatar></div>
     <mat-card-title>
-      <h3>{{dish.name | uppercase}}</h3>
+      <h3 style="text-align: center; margin-left: 80px;">{{dish.name | uppercase}}</h3>
     </mat-card-title>
   </mat-card-header>
-  <img mat-card-image  src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
+  <img  mat-card-image  src="{{ BaseURL + dish.image }}" alt={{dish.name}}>
   <mat-card-content>
-    <p>{{dish.description}}
+    <p><b><i>{{dish.description}}</i></b>
     </p>
   </mat-card-content>
 </mat-card>
@@ -29,12 +49,12 @@
   <mat-card-header>
     <div mat-card-avatar></div>
     <mat-card-title>
-      <h3>{{promotion.name | uppercase}}</h3>
+      <h3 style="text-align: center; margin-left: 40px;">{{promotion.name | uppercase}}</h3>
     </mat-card-title>
   </mat-card-header>
   <img mat-card-image src="{{ BaseURL+ promotion.image}}" alt={{promotion.name}}>
   <mat-card-content>
-    <p>{{promotion.description}}
+    <p><i><b>{{promotion.description}}</b></i>
     </p>
   </mat-card-content>
 </mat-card>
@@ -50,13 +70,13 @@
   <mat-card-header>
     <div mat-card-avatar></div>
     <mat-card-title>
-      <h3>{{leader.name | uppercase}}</h3>
+      <h3 style="text-align: center; margin-left: 60px;">{{leader.name | uppercase}}</h3>
     </mat-card-title>
   </mat-card-header>
   <img mat-card-image src="{{BaseURL + leader.image}}" alt={{leader.name}}>
   <mat-card-content>
-    <p>{{leader.designation}}</p>
-    <p>{{leader.description}}
+    <p><b>{{leader.designation}}</b></p>
+    <p><b><i>{{leader.description}}</i></b>
     </p>
   </mat-card-content>
 </mat-card>
